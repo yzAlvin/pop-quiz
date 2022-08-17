@@ -1,0 +1,23 @@
+.question {
+    border: 5px solid black;
+    text-align: center;
+    padding: 1em;
+}
+
+.question h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+
+.question p {
+    margin: 0;
+}
+
+.question input {
+    text-align: center;
+}
+
+.quiz {
+    padding: 56px 20px;
+}
