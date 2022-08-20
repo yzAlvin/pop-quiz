@@ -3,6 +3,11 @@ import { useState } from "preact/hooks";
 import { hiragana } from './hiragana'
 import { katakana } from './katakana';
 
+const s = {
+  "hiragana": hiragana,
+  "katakana": katakana
+}
+
 const Question = ({ questionSet }) => {
   const [n, setN] = useState(0)
   const [answer, setAnswer] = useState("");
@@ -38,12 +43,49 @@ const Question = ({ questionSet }) => {
   )
 }
 
-const Quiz = () => (
-  <div class={style.quiz}>
-    <h1>Quiz</h1>
-    <Question questionSet={hiragana} />
-    <Question questionSet={katakana} />
-  </div>
-);
+const Quiz = () => {
+  const [questionSet, setQuestionSet] = useState({})
+  const [checked, setChecked] = useState({"hiragana": false, "katakana": false})
+  const [quizStart, setQuizStart] = useState(false)
+  
+  const handleSubmit = (e) => {
+    const selectedSets = Object.keys(checked).filter(k => checked[k])
+    const set = selectedSets.map(selectedSet => s[selectedSet])
+    setQuestionSet(Object.assign(...set))
+    setQuizStart(true)
+    e.preventDefault();
+  }
+
+  const handleOnChange = (e) => {
+    const target = e.target.id
+    setChecked({...checked, [target]: !checked[target]})
+  }
+
+  return (
+    <div class={style.quiz}>
+      <h1>Quiz</h1>
+      {!quizStart && <form onSubmit={handleSubmit}>
+        <input 
+          type="checkbox"
+          id="hiragana"
+          checked={checked["hiragana"]}
+          onChange={handleOnChange}
+        />
+        <label>Hiragana</label>
+        <br/>
+        <input
+          type="checkbox"
+          id="katakana"
+          checked={checked["katakana"]}
+          onChange={handleOnChange}
+        />
+        <label>Katakana</label>
+        <br/>
+        <input type="submit" value="Submit" />
+      </form>}
+      {quizStart && <Question questionSet={questionSet} />}
+    </div>
+  );
+}
 
 export default Quiz;
