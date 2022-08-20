@@ -126,7 +126,7 @@ export const basic_hiragana = {
   ...w,
 };
 
-export const dakuten = {
+export const dakuten_hiragana = {
   ...g,
   ...z,
   ...d,
@@ -136,5 +136,5 @@ export const dakuten = {
 
 export const hiragana = {
   ...basic_hiragana,
-  ...dakuten
+  ...dakuten_hiragana
 }
