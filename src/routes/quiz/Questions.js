@@ -25,7 +25,7 @@ export const Questions = ({ questionSet }) => {
   };
 
   return (
-    <div class={style.question}>
+    <div class={style.questions}>
       {quizState === "End" ?
         <h3>{correct}/{questions.length}</h3> :
         <>
