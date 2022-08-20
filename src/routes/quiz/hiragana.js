@@ -73,7 +73,47 @@ export const w = {
   を: "wo",
 };
 
-export const hiragana = {
+export const g = {
+  が: "",
+  ぎ: "",
+  ぐ: "",
+  げ: "",
+  ご: "",
+};
+
+export const z = {
+  ざ: "",
+  じ: "",
+  ず: "",
+  ぜ: "",
+  ぞ: "",
+};
+
+export const d = {
+  だ: "",
+  ぢ: "",
+  づ: "",
+  で: "",
+  ど: "",
+};
+
+export const b = {
+  ば: "",
+  び: "",
+  ぶ: "",
+  べ: "",
+  ぼ: "",
+};
+
+export const p = {
+  ぱ: "",
+  ぴ: "",
+  ぷ: "",
+  ぺ: "",
+  ぽ: "",
+};
+
+export const basic_hiragana = {
   ...a,
   ...k,
   ...s,
@@ -85,3 +125,16 @@ export const hiragana = {
   ...r,
   ...w,
 };
+
+export const dakuten = {
+  ...g,
+  ...z,
+  ...d,
+  ...b,
+  ...p
+}
+
+export const hiragana = {
+  ...basic_hiragana,
+  ...dakuten
+}
