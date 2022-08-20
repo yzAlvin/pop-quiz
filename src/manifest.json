@@ -1,6 +1,6 @@
 {
-  "name": "pop-quiz",
-  "short_name": "pop-quiz",
+  "name": "Pop Quiz",
+  "short_name": "Pop",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -55,12 +55,12 @@
 }
 
 .quiz_menu input[type="submit"]{
-    height: 80px;
-    padding: 1em 2em;
+    width: 50vw;
+    padding: 1vh;
     border: 2px solid #000;
     background: #2f2f2f;
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 40px;
     cursor: pointer;
     transition: all 0.2s;
